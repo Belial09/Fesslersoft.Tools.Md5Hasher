@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="md5hashcreatorapp">
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script src="js/md5hashcreatorapp.js"></script>
+        <script src="js/angular-md5.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+    </head>
+
+    <body ng-controller="md5hashcreatorappController">
+        <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+        <center>
+            <div class="main-container">
+                <div class="main wrapper clearfix">
+                    <script>
+                        var clipboard = new Clipboard('.btn');</script>
+
+
+                    <form class="form-horizontal">
+                        <fieldset>
+
+                            <h2>MD5 Hasher</h2>
+                            <!-- Text input-->
+                            <div class="control-group">
+                                <label class="control-label" for="textinput">Enter text to Hash:</label>
+                                <div class="controls">
+                                    <textarea id="textinputEncode" name="textinput" type="text" placeholder="please enter your text" class=" form-control" ng-model="inputValue" ng-change="textChangedInput()"></textarea>
+                                    <label class="control-label" for="textinput">Salt:</label>
+                                    <div class="controls">
+                                        <input id="textinputEncode" name="textinput" type="text" placeholder="please enter your text" class=" form-control" ng-model="saltValue" ng-change="textChangedSalt()"></textarea>                                          <div class="radio">
+                                        <div ng-init="saltOption=1" />
+                                            <label><input type="radio" checked name="optradio" ng-model="saltOption" value = "1" ng-change='saltOptionChanged(saltOption)'>add before</label>
+                                            <label><input type="radio" name="optradio" ng-model="saltOption" value="2" ng-change='saltOptionChanged(saltOption)'>add after</label>
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                <b><p id="help-block-encode" class="help-block" ng-bind="md5String"></p></b><button class="btn" data-clipboard-target="#help-block-encode">Copy <i class="fa fa-clipboard"></i></button>
+                            </div>
+                            </div>
+
+                        <br/><br/><br/><br/>
+
+                        </fieldset>
+                    </form>
+
+            </div>
+            </div>
+
+        <br/><br/><br/>
+        <div class="footer-container"  >
+            <h3 >About</h3>
+            <p>This is a little MD5 Hash creator using only HTML and Client-Side Javascript. No user data will be stored. Feel free to use this little Tool. Also take a look at the awesome resources used.</p>
+            <h3>Resources</h3>
+            <h4>Editors / Tools</h4>
+            <a href="http://brackets.io/">Brackets</a>, <a href="https://filezilla-project.org/">FileZilla</a>
+            <h4>Frameworks</h4>
+            <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="https://angularjs.org/">AngularJS</a>
+            <h4>Fonts</h4>
+            <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a>
+            <h4>Plugins/Libs</h4>
+            <a href="https://github.com/gdi2290/angular-md5">gdi2290's angular-md5</a>, <a href="https://zenorocha.github.io/clipboard.js/">Zeno Rocha's clipboard.js</a>, <a href="https://github.com/shumpei/brackets-autoindent-extension">Shumpei's brackets-autoindent-extension</a>
+            <h3>Sourcecode</h3>
+            <p>As it is our philosophy to share and improve code we write, you can access the full sourcecode in our Github repository.<br/>
+Feel free to send us suggestions, fixes and so on. We always try to improve our Web Development skills as we are mainly Windows desktop developers.</p>
+        </div>
+        <br/><br/><br/>
+        </center>
+
+    </body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/pagestyle.css">
+
+</html>
